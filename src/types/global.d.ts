@@ -8,6 +8,8 @@ declare global {
   interface ResultProps {
     result: string;
     targetTime: number;
+    remainingTime: number;
+    onReset: () => void;
   }
 
   interface TimeChallengeProps {
