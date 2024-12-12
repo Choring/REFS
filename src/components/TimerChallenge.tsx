@@ -1,14 +1,9 @@
 import { useState, useRef } from "react";
 import { ResultModal } from "./ResultModal";
 
-type Props = {
-    title: string;
-    targetTime: number;
-}
-
-export const TimerChallenge = ({title, targetTime}: Props) => {
+export const TimerChallenge = ({title, targetTime}: TimeChallengeProps) => {
     const timer = useRef<number | undefined>(undefined);
-    const dialog = useRef<HTMLDialogElement | null>(null);
+    const dialog = useRef<ModalProps>(null);
 
     const [timerStarted, setTimerStarted] = useState(false);
     const [timerExpired, setTimerExpired] = useState(false);
@@ -17,7 +12,7 @@ export const TimerChallenge = ({title, targetTime}: Props) => {
     const handleStart = () => {
         timer.current = setTimeout(() =>{
             setTimerExpired(true);
-            dialog.current?.showModal();
+            dialog.current?.open();
         }, targetTime * 1000);
 
         setTimerStarted(true);
