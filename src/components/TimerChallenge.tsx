@@ -35,7 +35,6 @@ export const TimerChallenge = ({title, targetTime}: TimeChallengeProps) => {
         <ResultModal ref={dialog} targetTime={targetTime} result="lost" remainingTime = {timeRemaining} onReset={handleReset} />
         <section className="challenge">
             <h2>{title}</h2>
-            {timerIsActive && <p>You lost!</p>}
             <p className="challenge-time">
                 {targetTime} second{targetTime >  1 ? "s" : ""}
             </p>
@@ -45,7 +44,7 @@ export const TimerChallenge = ({title, targetTime}: TimeChallengeProps) => {
                 </button>
             </p>
             <p className={timerIsActive ? "active" : undefined}>
-            {timerIsActive ? "Time is running..." : "Timer inactive"}
+            {timerIsActive ? "타이머 활성화..." : "타이머 비활성화"}
             </p>
         </section>
     </>

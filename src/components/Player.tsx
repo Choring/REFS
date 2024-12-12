@@ -13,7 +13,7 @@ export const Player = () => {
 
   return (
     <section id="player">
-      <h2>Welcome {enterdPlayerName ?? "unknown entity" }</h2>
+      <h2>환영합니다. {enterdPlayerName === null ? "이름을 입력해 주세요!" : `${enterdPlayerName}님` }</h2>
       <p>
         <input ref={playerName} type="text" />
         <button onClick={handleClick} >Set Name</button>
